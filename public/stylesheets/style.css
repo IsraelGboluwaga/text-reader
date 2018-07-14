@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #fff;
+    color: #555;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+}
+
+/*---- Reusable Components ----*/
+.row {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/*---- Header ----*/
+header {
+    background: linear-gradient(rgba(0, 0, 90, 0.7), rgba(100, 0, 100, 0.6)), url("../images/tom.jpg") fixed center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header-ceil {
+    background-color: rgba(158, 158, 158, 0.4);
+    color: #f1f1b8;
+    font-size: 250%;
+    padding: 0.2rem 0.8rem 0.5rem;
+}
+
+/*---- Form ----*/
+form {
+    top: 6rem;
+    position: absolute;
+}
+
+textarea {
+    border-radius: 5px;
+    padding: 15px;
+}
+
+form .btn {
+    border-radius: 5px;
+    display: inline-block;
+    float: left;
+    padding: 10px 30px;
+    margin-right: 7px;
+    font-weight: 300;
+    font-size: 80%;
+    text-decoration: none;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    cursor: pointer;
+    border: 1px solid transparent;
+    color: #555555;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #a078b0;
+    color: #f1f1b8;
+}

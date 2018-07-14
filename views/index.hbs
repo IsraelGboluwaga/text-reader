@@ -1,0 +1,52 @@
+<section>
+    <header>
+        <div class="header-ceil">
+            <div class="row">
+                TextReadr
+            </div>
+        </div>
+    </header>
+
+    <div class="row">
+        <form action="">
+            <textarea name="text" cols=100" rows="25" placeholder="Enter text to read here"></textarea>
+            <br>
+            <button id="read" class="btn btn-read" type="button">Read</button>
+            <button id="clear" class="btn btn-clear" type="button">Clear</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    if (!('speechSynthesis' in window)) {
+        // Synthesis support. Make your web apps talk!
+        alert('Kole werk');
+    } else {
+        var clear_text_element = document.getElementById('clear');
+        clear_text_element.addEventListener('click', function () {
+            var textarea = document.getElementsByTagName('textarea');
+            textarea[0].value = '';
+        });
+
+        var read_text_element = document.getElementById('read');
+        read_text_element.addEventListener('click', function () {
+            var text_value = document.getElementsByTagName('textarea')[0].value;
+            var message = new SpeechSynthesisUtterance();
+            var voices = window.speechSynthesis.getVoices();
+
+            message.voice = voices[10]; // Note: some voices don't support altering params
+            message.voiceURI = 'native';
+            message.volume = 1; // 0 to 1
+            message.rate = 1; // 0.1 to 10
+            message.pitch = 1; //0 to 2
+            message.text = text_value;
+            message.lang = 'en-US';
+
+            message.onend = function(e) {
+                alert('Finished in ' + event.elapsedTime + ' seconds.');
+            };
+
+            speechSynthesis.speak(message);
+        });
+    }
+</script>
