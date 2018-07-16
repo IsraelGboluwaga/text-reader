@@ -40,7 +40,6 @@
         read_text_element.addEventListener('click', function () {
             var text_value = document.getElementsByTagName('textarea')[0].value;
             var message = new SpeechSynthesisUtterance();
-            var voices = window.speechSynthesis.getVoices();
 
             message.voiceURI = 'native';
             message.volume = 1; // 0 to 1
