@@ -12,8 +12,10 @@
             <textarea name="text" cols=100" rows="25" placeholder="Enter text to read here"></textarea>
         </div>
         <div class="buttons">
-            <button id="read" class="btn btn-read" type="button">Read</button>
-            <button id="clear" class="btn btn-clear" type="button">Clear</button>
+            <button id="read" class="btn btn-controls" type="button">Read</button>
+            <button id="pause" class="btn btn-controls" type="button">Pause</button>
+            <button id="resume" class="btn btn-controls" type="button">Resume</button>
+            <button id="clear" class="btn btn-controls" type="button">Clear</button>
         </div>
     </form>
 </div>
@@ -25,34 +27,5 @@
                       target="_blank">
         CC 3.0 BY</a>
 </div>
-<script>
-    if (!('speechSynthesis' in window)) {
-        // Synthesis support. Make your web apps talk!
-        alert('Oops. Your browser does not support this feature.');
-    } else {
-        var clear_text_element = document.getElementById('clear');
-        clear_text_element.addEventListener('click', function () {
-            var textarea = document.getElementsByTagName('textarea');
-            textarea[0].value = '';
-        });
 
-        var read_text_element = document.getElementById('read');
-        read_text_element.addEventListener('click', function () {
-            var text_value = document.getElementsByTagName('textarea')[0].value;
-            var message = new SpeechSynthesisUtterance();
-
-            message.voiceURI = 'native';
-            message.volume = 1; // 0 to 1
-            message.rate = 1; // 0.1 to 10
-            message.pitch = 1; //0 to 2
-            message.text = text_value;
-            message.lang = 'en-US';
-
-            message.onend = function (e) {
-                alert('Reading done!');
-            };
-
-            speechSynthesis.speak(message);
-        });
-    }
-</script>
+<script src="javascripts/script.js"></script>

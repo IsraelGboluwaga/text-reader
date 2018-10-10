@@ -89,7 +89,7 @@ form .btn {
     color: #a078b0;
     font-size: 70%;
     padding: 3px 3px 3px 7px;
-    position: absolute;
+    position: fixed;
 }
 
 .favicon-credit a:link, a:visited {
@@ -102,24 +102,32 @@ form .btn {
     text-decoration: none;
 }
 
+#resume {
+    display: none;
+}
+
+.btn .btn-controls {
+    width: 33.33%;
+}
+
 @media screen and (min-width: 501px) {
     .text-area {
         width: 100%;
-        padding: 0.2rem 0.8rem 0.5rem;
+        padding: 0.2rem 0.8rem 0.5rem 1.2rem;
     }
 
     .buttons {
-        padding-left: 15px;
+        padding-left: 1.3rem;
     }
 }
 
 @media screen and (max-width: 500px) {
     .text-area {
         width: 100%;
-        padding: 0.2rem 0.8rem 0.5rem;
+        padding: 0.2rem 0.9rem 0.5rem 1.3rem;
     }
 
     .buttons {
-        padding-left: 15px;
+        padding-left: 1.3rem;
     }
 }
