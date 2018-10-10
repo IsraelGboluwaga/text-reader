@@ -26,27 +26,28 @@ if (!('speechSynthesis' in window)) {
         message.onend = function (e) {
             alert('Reading done!');
         };
+        
         if (speechSynthesis.paused == true) {
-            SpeechSynthesis.resume();
+            speechSynthesis.resume();
         }
         else {
             speechSynthesis.speak(message);
         }
-    });
 
-    var pause_reading_element = document.getElementById('pause');
-    pause_reading_element.addEventListener('click', function () {
-        speechSynthesis.pause();
-        pause_reading_element.style.display = 'none';
-        resume_reading_element.style.display = 'block';
+        var pause_reading_element = document.getElementById('pause');
+        pause_reading_element.addEventListener('click', function () {
+            speechSynthesis.pause();
+            pause_reading_element.style.display = 'none';
+            resume_reading_element.style.display = 'block';
 
-    });
+        });
 
-    var resume_reading_element = document.getElementById('resume');
-    resume_reading_element.addEventListener('click', function () {
-        speechSynthesis.resume();
-        resume_reading_element.style.display = 'none';
-        pause_reading_element.style.display = 'block';
+        var resume_reading_element = document.getElementById('resume');
+        resume_reading_element.addEventListener('click', function () {
+            speechSynthesis.resume();
+            resume_reading_element.style.display = 'none';
+            pause_reading_element.style.display = 'block';
+        });
     });
 
 }

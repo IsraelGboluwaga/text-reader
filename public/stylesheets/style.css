@@ -73,7 +73,6 @@ form .btn {
     font-size: 80%;
     margin-right: 7px;
     padding: 10px 30px;
-    /*padding: 0.2rem 0.8rem 0.5rem;*/
     text-decoration: none;
     transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
